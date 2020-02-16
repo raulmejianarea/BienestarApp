@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F52B11C23F32303001613CB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52B11B23F32303001613CB /* CustomTableViewCell.swift */; };
+		7F52B11E23F32BEC001613CB /* DetailAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52B11D23F32BEC001613CB /* DetailAppController.swift */; };
+		7FAB8F6523EC7E27001A1433 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB8F6423EC7E27001A1433 /* MenuController.swift */; };
+		7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7523D0550800D04D83 /* AppDelegate.swift */; };
+		7FEBEB7823D0550800D04D83 /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7723D0550800D04D83 /* loginController.swift */; };
+		7FEBEB7B23D0550800D04D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7923D0550800D04D83 /* Main.storyboard */; };
+		7FEBEB7D23D0550E00D04D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7C23D0550E00D04D83 /* Assets.xcassets */; };
+		7FEBEB8023D0550E00D04D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7E23D0550E00D04D83 /* LaunchScreen.storyboard */; };
+		7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB8723D0573F00D04D83 /* registerController.swift */; };
+		7FEBEB8A23D0667800D04D83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB8923D0667800D04D83 /* User.swift */; };
+		7FEC8C7E23D1BB4200B15125 /* recoverPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC8C7D23D1BB4200B15125 /* recoverPasswordController.swift */; };
+		B115C8E0A9B0521F58B32FD2 /* Pods_Bienestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B40140EC0FAE606A12A955 /* Pods_Bienestapp.framework */; };
+		FF22B39223F85A4100254D4B /* RestricTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF22B39123F85A4100254D4B /* RestricTimeController.swift */; };
+		FF22B39623F85B5800254D4B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF22B39523F85B5800254D4B /* App.swift */; };
+		FF4C441723F2A83900A0A8C9 /* mujer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF4C441623F2A83900A0A8C9 /* mujer.jpg */; };
+		FF4C441923F2AA6C00A0A8C9 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441823F2AA6C00A0A8C9 /* MapsController.swift */; };
+		FF4C441B23F2AB1A00A0A8C9 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441A23F2AB1A00A0A8C9 /* AppsController.swift */; };
+		FF4C441D23F2ABAA00A0A8C9 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441C23F2ABAA00A0A8C9 /* StatisticsController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14E8622CE5A1121CE726E67A /* Pods-Bienestapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bienestapp.release.xcconfig"; path = "Target Support Files/Pods-Bienestapp/Pods-Bienestapp.release.xcconfig"; sourceTree = "<group>"; };
+		621FE4DD4F7EC455E5C886A5 /* Pods-Bienestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bienestapp.debug.xcconfig"; path = "Target Support Files/Pods-Bienestapp/Pods-Bienestapp.debug.xcconfig"; sourceTree = "<group>"; };
+		7F52B11B23F32303001613CB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		7F52B11D23F32BEC001613CB /* DetailAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppController.swift; sourceTree = "<group>"; };
+		7FAB8F6423EC7E27001A1433 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		7FEBEB7223D0550800D04D83 /* Bienestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bienestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEBEB7523D0550800D04D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FEBEB7723D0550800D04D83 /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
+		7FEBEB7A23D0550800D04D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FEBEB7C23D0550E00D04D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FEBEB7F23D0550E00D04D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FEBEB8123D0550E00D04D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEBEB8723D0573F00D04D83 /* registerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerController.swift; sourceTree = "<group>"; };
+		7FEBEB8923D0667800D04D83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7FEC8C7D23D1BB4200B15125 /* recoverPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recoverPasswordController.swift; sourceTree = "<group>"; };
+		F1B40140EC0FAE606A12A955 /* Pods_Bienestapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bienestapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF22B39123F85A4100254D4B /* RestricTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestricTimeController.swift; sourceTree = "<group>"; };
+		FF22B39523F85B5800254D4B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		FF4C441623F2A83900A0A8C9 /* mujer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mujer.jpg; sourceTree = "<group>"; };
+		FF4C441823F2AA6C00A0A8C9 /* MapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
+		FF4C441A23F2AB1A00A0A8C9 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
+		FF4C441C23F2ABAA00A0A8C9 /* StatisticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FEBEB6F23D0550700D04D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B115C8E0A9B0521F58B32FD2 /* Pods_Bienestapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B97F462ABF47A5F2EC0E1A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1B40140EC0FAE606A12A955 /* Pods_Bienestapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FEBEB6923D0550700D04D83 = {
+			isa = PBXGroup;
+			children = (
+				7FEBEB7423D0550800D04D83 /* Bienestapp */,
+				7FEBEB7323D0550800D04D83 /* Products */,
+				E332B0A7FE177A41AE56666D /* Pods */,
+				4B97F462ABF47A5F2EC0E1A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7FEBEB7323D0550800D04D83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FEBEB7223D0550800D04D83 /* Bienestapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FEBEB7423D0550800D04D83 /* Bienestapp */ = {
+			isa = PBXGroup;
+			children = (
+				FF22B39423F85B2D00254D4B /* Models */,
+				FF22B39323F85ADA00254D4B /* Controllers */,
+				7FEBEB7523D0550800D04D83 /* AppDelegate.swift */,
+				7FEBEB7923D0550800D04D83 /* Main.storyboard */,
+				7FEBEB7C23D0550E00D04D83 /* Assets.xcassets */,
+				7FEBEB7E23D0550E00D04D83 /* LaunchScreen.storyboard */,
+				7FEBEB8123D0550E00D04D83 /* Info.plist */,
+				FF4C441623F2A83900A0A8C9 /* mujer.jpg */,
+				7F52B11B23F32303001613CB /* CustomTableViewCell.swift */,
+			);
+			path = Bienestapp;
+			sourceTree = "<group>";
+		};
+		E332B0A7FE177A41AE56666D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				621FE4DD4F7EC455E5C886A5 /* Pods-Bienestapp.debug.xcconfig */,
+				14E8622CE5A1121CE726E67A /* Pods-Bienestapp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF22B39323F85ADA00254D4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FEBEB7723D0550800D04D83 /* loginController.swift */,
+				7F52B11D23F32BEC001613CB /* DetailAppController.swift */,
+				FF4C441C23F2ABAA00A0A8C9 /* StatisticsController.swift */,
+				FF4C441823F2AA6C00A0A8C9 /* MapsController.swift */,
+				FF4C441A23F2AB1A00A0A8C9 /* AppsController.swift */,
+				7FEC8C7D23D1BB4200B15125 /* recoverPasswordController.swift */,
+				7FEBEB8723D0573F00D04D83 /* registerController.swift */,
+				7FAB8F6423EC7E27001A1433 /* MenuController.swift */,
+				FF22B39123F85A4100254D4B /* RestricTimeController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FF22B39423F85B2D00254D4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7FEBEB8923D0667800D04D83 /* User.swift */,
+				FF22B39523F85B5800254D4B /* App.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FEBEB7123D0550700D04D83 /* Bienestapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FEBEB8423D0550E00D04D83 /* Build configuration list for PBXNativeTarget "Bienestapp" */;
+			buildPhases = (
+				32017076469E00CDD2FC05FB /* [CP] Check Pods Manifest.lock */,
+				7FEBEB6E23D0550700D04D83 /* Sources */,
+				7FEBEB6F23D0550700D04D83 /* Frameworks */,
+				7FEBEB7023D0550700D04D83 /* Resources */,
+				2149163E9F87A0D2C5BEF5F1 /* [CP] Embed Pods Frameworks */,
+				DC28F34D611ACF85BC4B800F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bienestapp;
+			productName = Bienestapp;
+			productReference = 7FEBEB7223D0550800D04D83 /* Bienestapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FEBEB6A23D0550700D04D83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = alumnos;
+				TargetAttributes = {
+					7FEBEB7123D0550700D04D83 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 7FEBEB6D23D0550700D04D83 /* Build configuration list for PBXProject "Bienestapp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FEBEB6923D0550700D04D83;
+			productRefGroup = 7FEBEB7323D0550800D04D83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FEBEB7123D0550700D04D83 /* Bienestapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FEBEB7023D0550700D04D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FEBEB8023D0550E00D04D83 /* LaunchScreen.storyboard in Resources */,
+				7FEBEB7D23D0550E00D04D83 /* Assets.xcassets in Resources */,
+				7FEBEB7B23D0550800D04D83 /* Main.storyboard in Resources */,
+				FF4C441723F2A83900A0A8C9 /* mujer.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2149163E9F87A0D2C5BEF5F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32017076469E00CDD2FC05FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bienestapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC28F34D611ACF85BC4B800F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FEBEB6E23D0550700D04D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF22B39623F85B5800254D4B /* App.swift in Sources */,
+				7FEBEB8A23D0667800D04D83 /* User.swift in Sources */,
+				FF22B39223F85A4100254D4B /* RestricTimeController.swift in Sources */,
+				FF4C441D23F2ABAA00A0A8C9 /* StatisticsController.swift in Sources */,
+				7F52B11E23F32BEC001613CB /* DetailAppController.swift in Sources */,
+				FF4C441923F2AA6C00A0A8C9 /* MapsController.swift in Sources */,
+				7FEBEB7823D0550800D04D83 /* loginController.swift in Sources */,
+				7FEC8C7E23D1BB4200B15125 /* recoverPasswordController.swift in Sources */,
+				7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */,
+				7F52B11C23F32303001613CB /* CustomTableViewCell.swift in Sources */,
+				7FAB8F6523EC7E27001A1433 /* MenuController.swift in Sources */,
+				7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */,
+				FF4C441B23F2AB1A00A0A8C9 /* AppsController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7FEBEB7923D0550800D04D83 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FEBEB7A23D0550800D04D83 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FEBEB7E23D0550E00D04D83 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FEBEB7F23D0550E00D04D83 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FEBEB8223D0550E00D04D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7FEBEB8323D0550E00D04D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FEBEB8523D0550E00D04D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621FE4DD4F7EC455E5C886A5 /* Pods-Bienestapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Bienestapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fabregas.Bienestapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FEBEB8623D0550E00D04D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14E8622CE5A1121CE726E67A /* Pods-Bienestapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Bienestapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fabregas.Bienestapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FEBEB6D23D0550700D04D83 /* Build configuration list for PBXProject "Bienestapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEBEB8223D0550E00D04D83 /* Debug */,
+				7FEBEB8323D0550E00D04D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FEBEB8423D0550E00D04D83 /* Build configuration list for PBXNativeTarget "Bienestapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FEBEB8523D0550E00D04D83 /* Debug */,
+				7FEBEB8623D0550E00D04D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FEBEB6A23D0550700D04D83 /* Project object */;
+}
