@@ -7,13 +7,6 @@ class registerController: UIViewController {
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
-    
-    
-    
-    @IBOutlet weak var error_name: UILabel!
-    @IBOutlet weak var error_email: UILabel!
-    @IBOutlet weak var error_password: UILabel!
-    
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
@@ -24,22 +17,21 @@ class registerController: UIViewController {
     @IBAction func register(_ sender: Any) {
     
        guard let registerName = name.text, name.text?.count != 0 else {
-        error_name.text = "El campo nombre no puede estar vacio"
+       createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
         return
         }
         
         guard let registerEmail = email.text, email.text?.count != 0 else {
-                error_email.text = "El campo email no puede estar vacio "
+                createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
                 return
         }
         if isValidEmail(emailID: registerEmail) == false {
-                error_email.text = "El formato del email no es correcto "
-            }else{
-                error_email.text = " "
-        }
+                 createAlert(title: "Error en el email", message: "El formato del email no es valido")
+            }
         
-        guard let registerPassword = password.text, email.text?.count != 0 else {
-            error_password.text = "El campo password no puede estar vacio "
+        guard let registerPassword = password.text, password.text?.count != 0 else {
+            createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
+            return
         }
         
         registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender) {
@@ -48,6 +40,13 @@ class registerController: UIViewController {
      
       
         
+    }
+    func createAlert(title: String, message: String)  {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (Action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func isValidEmail(emailID: String) -> Bool {
@@ -62,10 +61,7 @@ class registerController: UIViewController {
           return passPred.evaluate(with: password)
       }
     
-}
-
-
-func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping () -> ()) {
+    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping () -> ()) {
     let url = URL(string: "http://localhost/apibienestar/public/api/register")
     let json = ["name": name,
                 "email": email,
@@ -85,6 +81,11 @@ func registerUser(name: String, email: String, password: String, sender: Any, co
         
                 }
     }
+    
+}
+
+
+
 
     
 
