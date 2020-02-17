@@ -8,30 +8,18 @@
 
 import UIKit
 import Alamofire
-import MTCircularSlider
+import MSCircularSlider
 
 class StatisticsController: UIViewController {
-    
-    @IBOutlet weak var Selector: MTCircularSlider!
-    @IBOutlet weak var Hora: UILabel!
-    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
   
     }
     
-  
-    @IBAction func OnSlidechange(_ sender: MTCircularSlider) {
-        setValueLabelText()
-        print(setValueLabelText())
-        
-    }
-    
-    fileprivate func setValueLabelText() {
-       Hora.text = String(Int(Selector.value))
-    }
-    
+
     
     
    

@@ -7,8 +7,8 @@ target 'Bienestapp' do
 pod 'Alamofire', '~> 4.5'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
-pod 'MTCircularSlider'
-
+pod 'MSCircularSlider'
+pod 'OHHTTPStubs/Swift'
   # Pods for Bienestapp
 
 end

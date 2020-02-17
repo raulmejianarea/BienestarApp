@@ -25,6 +25,7 @@
 		FF4C441923F2AA6C00A0A8C9 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441823F2AA6C00A0A8C9 /* MapsController.swift */; };
 		FF4C441B23F2AB1A00A0A8C9 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441A23F2AB1A00A0A8C9 /* AppsController.swift */; };
 		FF4C441D23F2ABAA00A0A8C9 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C441C23F2ABAA00A0A8C9 /* StatisticsController.swift */; };
+		FFE80F8B23FA20B100BBD386 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE80F8A23FA20B100BBD386 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FF4C441823F2AA6C00A0A8C9 /* MapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 		FF4C441A23F2AB1A00A0A8C9 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
 		FF4C441C23F2ABAA00A0A8C9 /* StatisticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
+		FFE80F8A23FA20B100BBD386 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7FEBEB8123D0550E00D04D83 /* Info.plist */,
 				FF4C441623F2A83900A0A8C9 /* mujer.jpg */,
 				7F52B11B23F32303001613CB /* CustomTableViewCell.swift */,
+				FFE80F8A23FA20B100BBD386 /* ImageCollectionViewCell.swift */,
 			);
 			path = Bienestapp;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				7FEC8C7E23D1BB4200B15125 /* recoverPasswordController.swift in Sources */,
 				7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */,
 				7F52B11C23F32303001613CB /* CustomTableViewCell.swift in Sources */,
+				FFE80F8B23FA20B100BBD386 /* ImageCollectionViewCell.swift in Sources */,
 				7FAB8F6523EC7E27001A1433 /* MenuController.swift in Sources */,
 				7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */,
 				FF4C441B23F2AB1A00A0A8C9 /* AppsController.swift in Sources */,

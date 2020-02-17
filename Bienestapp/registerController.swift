@@ -2,6 +2,7 @@
 
 import UIKit
 import Alamofire
+import OHHTTPStubs
 
 class registerController: UIViewController {
     
@@ -12,6 +13,11 @@ class registerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+       
+        
+        
     }
     
     @IBAction func register(_ sender: Any) {
@@ -34,9 +40,13 @@ class registerController: UIViewController {
             return
         }
         
-        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender) {
-            print("se ha registrado correctamente")
-        }
+        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender, completion: {result in
+            
+            if result == true {
+                   self.performSegue(withIdentifier: "loggin", sender: sender)
+            }
+            
+        })
      
       
         
@@ -61,7 +71,7 @@ class registerController: UIViewController {
           return passPred.evaluate(with: password)
       }
     
-    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping () -> ()) {
+    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
     let url = URL(string: "http://localhost/apibienestar/public/api/register")
     let json = ["name": name,
                 "email": email,
@@ -71,21 +81,30 @@ class registerController: UIViewController {
     Alamofire.request(url!, method: .post, parameters: json, headers: nil).responseJSON { (response) in
         print(response)
         
-                    do {
 
-                               completion()
-        
-                    }catch {
-                        print(error)
-                    }
+                   do {
+                       
+                       let rs: RegisterUserResponse = try JSONDecoder().decode(RegisterUserResponse.self, from: response.data!)
+                       print(rs.error_msg!)
+                       
+                       if rs.error_code == 200 {
+                     
+                           if rs.error_msg == "registrado" {
+                              completion(true)
+                           }
+                       
+                       }else if rs.error_code == 404 {
+                           completion(false)
+                           self.createAlert(title: "error", message: "No se ha podido realizar el registro")
+                       }
+                   }catch {
+                       print(error)
+                   }
         
                 }
     }
     
 }
-
-
-
 
     
 
