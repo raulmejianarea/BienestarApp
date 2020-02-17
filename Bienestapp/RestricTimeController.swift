@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import MSCircularSlider
+
+//import MSCircularSlider
 
 class RestricTimeController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
@@ -37,7 +37,14 @@ class RestricTimeController: UIViewController, UICollectionViewDelegate, UIColle
 //
 //    }
     
-    
+    fileprivate let collectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        return cv
+    }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
            return fotos.count
@@ -50,19 +57,23 @@ class RestricTimeController: UIViewController, UICollectionViewDelegate, UIColle
                   
                   return cell
        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-
-
-
-}
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         CollectionView.delegate = self
         CollectionView.dataSource = self
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
   
     }
     
