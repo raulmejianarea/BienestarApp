@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+//import Alamofire
 //import MSCircularSlider
 
 class RestricTimeController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
     @IBOutlet weak var CollectionView: UICollectionView!
     
-      var fotos = [#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg")]
+    var fotos = [#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg")]
     var students = ["Ben", "Ivy", "Jordell"]
     
 //    func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
@@ -70,10 +70,10 @@ class RestricTimeController: UIViewController, UICollectionViewDelegate, UIColle
         // Do any additional setup after loading the view.
         CollectionView.delegate = self
         CollectionView.dataSource = self
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
+        CollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        CollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        CollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        CollectionView.heightAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
   
     }
     

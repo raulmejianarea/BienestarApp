@@ -4,6 +4,8 @@ import UIKit
 import Alamofire
 import OHHTTPStubs
 
+var apps: [App] = []
+
 class registerController: UIViewController {
     
     @IBOutlet weak var name: UITextField!
@@ -13,17 +15,14 @@ class registerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-       
-        
+ 
         
     }
     
     @IBAction func register(_ sender: Any) {
     
        guard let registerName = name.text, name.text?.count != 0 else {
-       createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
+                createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
         return
         }
         
@@ -31,26 +30,25 @@ class registerController: UIViewController {
                 createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
                 return
         }
-        if isValidEmail(emailID: registerEmail) == false {
-                 createAlert(title: "Error en el email", message: "El formato del email no es valido")
+        if HelperController.isValidEmail(emailID: registerEmail) == false {
+                createAlert(title: "Error en el email", message: "El formato del email no es valido")
             }
         
         guard let registerPassword = password.text, password.text?.count != 0 else {
-            createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
+            
+                createAlert(title: "Campos vacios", message: "Tienes que rellenar todos los campos")
             return
         }
         
-        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender, completion: {result in
-            
-            if result == true {
-                   self.performSegue(withIdentifier: "loggin", sender: sender)
-            }
-            
-        })
+//        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender)
+//        {
+//
+//        }
      
       
         
     }
+
     func createAlert(title: String, message: String)  {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (Action) in
@@ -58,51 +56,63 @@ class registerController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func isValidEmail(emailID: String) -> Bool {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-            let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-            return emailTest.evaluate(with: emailID)
-        }
-    
-    func isValidPassword(_ password: String) -> Bool {
-          let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-          let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
-          return passPred.evaluate(with: password)
-      }
-    
-    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
-    let url = URL(string: "http://localhost/apibienestar/public/api/register")
+ 
+    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping () -> ()) {
+    let url = URL(string: "http://localhost/apibienestar/public/api/register")!
     let json = ["name": name,
                 "email": email,
                 "password": password
                 ]
     
-    Alamofire.request(url!, method: .post, parameters: json, headers: nil).responseJSON { (response) in
+    Alamofire.request(url, method: .post, parameters: json, headers: nil).responseJSON { (response) in
+        
         print(response)
         
-
+    
                    do {
-                       
-                       let rs: RegisterUserResponse = try JSONDecoder().decode(RegisterUserResponse.self, from: response.data!)
-                       print(rs.error_msg!)
-                       
-                       if rs.error_code == 200 {
-                     
-                           if rs.error_msg == "registrado" {
-                              completion(true)
-                           }
-                       
-                       }else if rs.error_code == 404 {
-                           completion(false)
-                           self.createAlert(title: "error", message: "No se ha podido realizar el registro")
-                       }
+                    if response.response?.statusCode == 200 {
+                        
+                        if let json = response.result.value as? [String: Any]{
+                            
+                            let token = json["token"] as! String
+                            UserDefaults.standard.set(token, forKey: "token")
+                            
+                        }
+                    }else if response.response?.statusCode == 401 {
+                        
+                        if let json = response.result.value as? [String: Any] {
+                            
+                            let message = json["message"] as! String
+                            print(message)
+                        }
+                    }
+
                    }catch {
                        print(error)
                    }
         
-                }
+            }
     }
+    
+    func store_apps_data(text: String){
+        
+        let store_apps_list_url = URL(string:  "http://localhost/apibienestar/public/api/store_apps_data")!
+        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+        let headers = ["Authorization" : user_token]
+        let json = ["csv": text]
+        
+        Alamofire.request(store_apps_list_url, method: .post, parameters: json, encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch(response.response?.statusCode){
+            case 200:
+               print("almacenando datos")
+            default:
+                print("default")
+            }
+        }
+    }
+    
+    
     
 }
 

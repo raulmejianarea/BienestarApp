@@ -20,25 +20,30 @@ class loginController: UIViewController {
     }
     
     @IBAction func logginButton(_ sender: UIButton) {
-//        guard let loginemail = email.text, email.text?.count != 0 else {
-//                      createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
-//                      return
-//                  }
-//                  if isValidEmail(emailID: loginemail) == false {
-//                      createAlert(title: "Fallo", message: "Pon un email correcto")
-//                  }
-//                  
-//              guard let loginpassword = password.text, password.text?.count != 0 else {
-//                      createAlert(title: "Fallo", message: "Pon tu contraseña para continuar")
-//                      return
-//                  }
+        guard let loginemail = email.text, email.text?.count != 0 else {
+                      createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
+                      return
+                  }
+                  if HelperController.isValidEmail(emailID: loginemail) == false {
+                      createAlert(title: "Fallo", message: "Pon un email correcto")
+                  }
+
+              guard let loginpassword = password.text, password.text?.count != 0 else {
+                      createAlert(title: "Fallo", message: "Pon tu contraseña para continuar")
+                      return
+                  }
+//
+//        loginUser(email: loginemail, password: loginpassword, sender: sender) {
+//            //Enviar a la pantalla menu
+//
+//        }
         
         
     }
     
     
     
-     func createAlert(title: String, message: String)  {
+      func createAlert(title: String, message: String)  {
            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (Action) in
                alert.dismiss(animated: true, completion: nil)
@@ -46,49 +51,42 @@ class loginController: UIViewController {
            self.present(alert, animated: true, completion: nil)
        }
     
-      //metodo que verificia si el correo cumple los estandares validos ejemplo xcode@gmail.com
+     
       
-      func isValidEmail(emailID: String) -> Bool {
-          let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-          let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-          return emailTest.evaluate(with: emailID)
-      }
-    
-    func loginUser(email: String, password: String, sender: Any, completion: @escaping (Bool, Bool) -> ()) {
-        let url = URL(string: "http://localhost:8888/AutoPro-API-features-migrations/public/api/loginApp")
+
+    //metodo que realiza la peticion login a la Api
+    func loginUser(email: String, password: String, sender: Any, completion: @escaping () -> ()) {
+        let url = URL(string: "http://localhost/api-bienestar/public/api/login")
         let json = ["email": email,
-                    "password": password,
-                    "api_token": "24"]
+                    "password": password]
         
         Alamofire.request(url!, method: .post, parameters: json, headers: nil).responseJSON { (response) in
             print(response)
 
-//            do {
-//
-//                let rs: PostUserResponse = try JSONDecoder().decode(PostUserResponse.self, from: response.data!)
-//                print(rs.error_msg!)
-//
-//                if rs.error_code == 200 {
-//
-//                    if rs.error_msg == "Profesor" {
-//                       completion(true,false)
-//                    }else if rs.error_msg == "Alumno"{
-//                        completion(true, true)
-//
-//                    }
-//
-//                }else if rs.error_code == 404 {
-//                    completion(false, false)
-//                    self.createAlert(title: "error", message: "email o contraseña incorrectos")
-//                }
-//            }catch {
-//                print(error)
-//            }
-//
-//        }
+            
+            do {
+                if response.response?.statusCode == 200 {
+                    
+                    if let json = response.result.value as? [String: Any]{
+                        
+                        let token = json["token"] as! String
+                        UserDefaults.standard.set(token, forKey: "token")
+                        
+                    }
+                }else if response.response?.statusCode == 401 {
+                    
+                    if let json = response.result.value as? [String: Any] {
+                        self.createAlert(title: "Error", message: "Email o contraseña incorrectos")
+                        let message = json["message"] as! String
+                        print(message)
+                    }
+                }
+                
+            }catch {
+                print(error)
+            }
+           
     }
-    
-  
 }
 
 }

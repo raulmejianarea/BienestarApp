@@ -28,9 +28,8 @@ class User: Codable {
 
 class RegisterUserResponse: Codable{
     var error_code : Int?
-     var error_msg : String?
-    
-    
+    var error_msg : String?
+  
 }
     
    

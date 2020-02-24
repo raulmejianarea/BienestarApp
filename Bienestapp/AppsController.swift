@@ -14,6 +14,9 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var Apps = [App]()
+    
     var students = ["Ben", "Ivy", "Jordell"]
     var fotos = [#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg")]
     
@@ -41,5 +44,27 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 88
     }
+    
+    func GetApps (completed: @escaping () -> ()) {
+          let url = URL(string: "http://localhost:8888/AutoPro-API-features-migrations/public/api/lesson")
+          
+          let json = ["api_token": "24"]
+          
+          Alamofire.request(url!, method: .get, parameters: json, headers: nil).responseJSON { (response) in
+              print(response)
+              
+              do {
+                self.Apps = try JSONDecoder().decode([App].self, from: response.data!)
+                  DispatchQueue.main.async{
+                      completed()
+                  }
+                  
+              }catch {
+                  print(error)
+                 
+              }
+          }.resume()
+      }
+    
    
 }
