@@ -8,15 +8,17 @@
 
 class App: Codable{
     
-    var id: Int
-    var logo: String
-    var nombre: String
+    var id: Int?
+    var name: String?
+    var logo: String?
+    
     
     init(json: [String: Any]) {
         
         id = json["id"] as? Int ?? 0
+        name = json["name"] as? String ?? ""
         logo = json["logo"] as? String ?? ""
-        nombre = json["name"] as? String ?? ""
+        
         
     }
 

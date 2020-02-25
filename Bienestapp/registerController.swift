@@ -40,10 +40,16 @@ class registerController: UIViewController {
             return
         }
         
-//        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender)
-//        {
-//
-//        }
+        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender, completion: {result in
+            
+            if result == true{
+                self.performSegue(withIdentifier: "login", sender: sender)
+            }else{
+                
+            }
+                
+            })
+      
      
       
         
@@ -57,8 +63,8 @@ class registerController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
  
-    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping () -> ()) {
-    let url = URL(string: "http://localhost/apibienestar/public/api/register")!
+    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
+    let url = URL(string: "http://localhost:8888/api-bienestar/public/api/register")!
     let json = ["name": name,
                 "email": email,
                 "password": password
@@ -76,6 +82,7 @@ class registerController: UIViewController {
                             
                             let token = json["token"] as! String
                             UserDefaults.standard.set(token, forKey: "token")
+                            completion(true)
                             
                         }
                     }else if response.response?.statusCode == 401 {
@@ -83,6 +90,7 @@ class registerController: UIViewController {
                         if let json = response.result.value as? [String: Any] {
                             
                             let message = json["message"] as! String
+                            completion(false)
                             print(message)
                         }
                     }

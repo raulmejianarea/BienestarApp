@@ -20,6 +20,9 @@ class loginController: UIViewController {
     }
     
     @IBAction func logginButton(_ sender: UIButton) {
+        
+         self.performSegue(withIdentifier: "menu", sender: sender)
+        
 //        guard let loginemail = email.text, email.text?.count != 0 else {
 //                      createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
 //                      return
@@ -33,10 +36,15 @@ class loginController: UIViewController {
 //                      return
 //                  }
 //
-//        loginUser(email: loginemail, password: loginpassword, sender: sender) {
-//            //Enviar a la pantalla menu
+//                loginUser(email: loginemail, password: loginpassword, sender: sender, completion: {result in
 //
+//        if result == true{
+//            self.performSegue(withIdentifier: "menu", sender: sender)
+//        }else if result == false{
+//            self.createAlert(title: "error", message: "email o contraseña incorrectos")
 //        }
+//
+//    })
         
         
     }
@@ -55,8 +63,8 @@ class loginController: UIViewController {
       
 
     //metodo que realiza la peticion login a la Api
-    func loginUser(email: String, password: String, sender: Any, completion: @escaping () -> ()) {
-        let url = URL(string: "http://localhost/api-bienestar/public/api/login")
+    func loginUser(email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
+        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/login")
         let json = ["email": email,
                     "password": password]
         
@@ -66,18 +74,21 @@ class loginController: UIViewController {
             
             do {
                 if response.response?.statusCode == 200 {
-                    
+                    completion(true)
                     if let json = response.result.value as? [String: Any]{
                         
                         let token = json["token"] as! String
                         UserDefaults.standard.set(token, forKey: "token")
                         
+                        
                     }
                 }else if response.response?.statusCode == 401 {
-                    
+                    completion(false)
                     if let json = response.result.value as? [String: Any] {
+                        
                         self.createAlert(title: "Error", message: "Email o contraseña incorrectos")
                         let message = json["message"] as! String
+                        
                         print(message)
                     }
                 }

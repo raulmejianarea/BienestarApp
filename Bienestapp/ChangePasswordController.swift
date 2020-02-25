@@ -18,8 +18,9 @@ class ChangePasswordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+       self.createAlert(title: "Info", message: "Al cambiar la contraseña tendras que volver hacer login")
+        
     }
     
     @IBAction func SaveChange(_ sender: Any) {
@@ -39,7 +40,15 @@ class ChangePasswordController: UIViewController {
         
         if (PasswordNew == PasswordNewConfirmation){
            
-            change_password(old_password: PasswordOld, new_password: PasswordNew)
+            change_password(old_password: PasswordOld, new_password: PasswordNew, sender: sender, completion: {result in
+                
+                if result == true{
+                    self.performSegue(withIdentifier: "login", sender: sender)
+                }else if result == false{
+                     self.createAlert(title: "error", message: "La contraseña antigua no es la correcta")
+                }
+                
+            })
         }else {
             createAlert(title: "Error", message: "La nueva contraseña y la confirmacion deben coincidir")
         }
@@ -54,10 +63,10 @@ class ChangePasswordController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
    
-    
-    func change_password(old_password: String, new_password: String) {
+    //peticion a la Api
+    func change_password(old_password: String, new_password: String, sender: Any, completion: @escaping (Bool) -> ()) {
         
-        let url = URL(string: "http://localhost/api-bienestar/public/api/change_user_password")!
+        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/change_user_password")!
         
         let json = ["old_password": old_password , "new_password": new_password]
         
@@ -69,33 +78,20 @@ class ChangePasswordController: UIViewController {
             
             response in
             
-//            switch(response.response?.statusCode){
-//
-//            case 200:
-//
-//                let alert_controller = UIAlertController(title: "¡Información!", message: "¡Su contraseña se cambió satisfactoriamente!", preferredStyle: .alert)
-//                self.present(alert_controller, animated: true, completion: nil)
-//                let action_cancel = UIAlertAction(title: "Aceptar", style: .cancel) { (action:UIAlertAction) in
-//                    apps.removeAll()
-//                    self.performSegue(withIdentifier: "change_password_to_login", sender: nil)
-//
-//                }
-//                alert_controller.addAction(action_cancel)
-//
-//            case 401:
-//
-//                let alert_controller = UIAlertController(title: "¡Aviso!", message: "¡La antigua contraseña introducida es incorrecta!", preferredStyle: .alert)
-//                self.present(alert_controller, animated: true, completion: nil)
-//                let action_cancel = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
-//
-//                }
-//                alert_controller.addAction(action_cancel)
-//
-//            default:
-//
-//                print("default_value")
-//
-//            }
+            do {
+                if response.response?.statusCode == 200 {
+                    
+                    completion(true)
+                    
+                }else if response.response?.statusCode == 401 {
+                   completion(false)
+                  
+                }
+                
+            }catch {
+                print(error)
+            }
+            
             
         }
         

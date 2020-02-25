@@ -27,6 +27,9 @@ class recoverPasswordController: UIViewController {
         if HelperController.isValidEmail(emailID: confirmationRecoverEmail) == false {
             createAlert(title: "Error en el email", message: "El formato del email no es valido")
         }
+        
+        recoverPassword(email: recoverEmail, confirm_email: confirmationRecoverEmail)
+        
  
     }
     func createAlert(title: String, message: String)  {
@@ -39,7 +42,7 @@ class recoverPasswordController: UIViewController {
     
     
     func recoverPassword(email: String, confirm_email: String) {
-        let url = URL(string:"http://localhost/api-bienestar/public/api/recover_password")
+        let url = URL(string:"http://localhost:8888/api-bienestar/public/api/recover_password")
         let json = ["email": email, "confirm_email": confirm_email]
         
         Alamofire.request(url!, method: .post, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in

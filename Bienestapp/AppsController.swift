@@ -17,27 +17,32 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var Apps = [App]()
     
-    var students = ["Ben", "Ivy", "Jordell"]
-    var fotos = [#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg")]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+//        GetApps {
+//             self.tableView.reloadData()
+//        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return Apps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         
-        cell.AppName.text = students[indexPath.row]
-        cell.AppLogo.image = fotos[indexPath.row]
-        cell.UseTime.text = students[indexPath.row]
+        cell.AppName.text = apps[indexPath.row].name
+        
+        
         return cell
     }
     
@@ -46,11 +51,12 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func GetApps (completed: @escaping () -> ()) {
-          let url = URL(string: "http://localhost:8888/AutoPro-API-features-migrations/public/api/lesson")
+        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/listarApps")
           
-          let json = ["api_token": "24"]
+        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+        let headers = ["Authorization" : user_token]
           
-          Alamofire.request(url!, method: .get, parameters: json, headers: nil).responseJSON { (response) in
+          Alamofire.request(url!, method: .get, headers: headers).responseJSON { (response) in
               print(response)
               
               do {
@@ -65,6 +71,29 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
               }
           }.resume()
       }
+    
+//    func get_apps_data(){
+//        let url = URL(string: local_host + "/api/app")!
+//        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+//        let headers = ["Authorization" : user_token]
+//        Alamofire.request(url, encoding: JSONEncoding.default, headers: headers).responseJSON {
+//            response in
+//            switch(response.response?.statusCode){
+//            case 200:
+//                print("OK")
+//                if let json = response.result.value as? [[String: Any]] {
+//                    for app in json {
+//                        apps.append(App(json: app))
+//                    }
+//                    self.performSegue(withIdentifier: "login_to_menu", sender: nil)
+//                }
+//            case 400:
+//                print("ERROR")
+//            default:
+//                print("DEFAULT")
+//            }
+//        }
+//    }
     
    
 }

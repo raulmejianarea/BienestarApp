@@ -26,9 +26,10 @@ class User: Codable {
     
 }
 
-class RegisterUserResponse: Codable{
-    var error_code : Int?
-    var error_msg : String?
+class perfildata: Codable{
+    var name : String?
+    var email : String?
+    var password : String?
   
 }
     
