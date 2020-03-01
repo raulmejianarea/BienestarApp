@@ -9,18 +9,23 @@ import Foundation
 
 class App: Codable{
     
-    var id: Int?
-    var name: String?
-    var logo: String?
+    var id : Int?
+    var name : String?
+    var logo : String?
     
     
-    init(json: [String: Any]) {
-        
-        id = json["id"] as? Int ?? 0
-        name = json["name"] as? String ?? ""
-        logo = json["logo"] as? String ?? ""
-        
-        
-    }
+    
+//    init(json: [String: Any]) {
+//
+//        id = json["id"] as? Int ?? 0
+//        name = json["name"] as? String ?? ""
+//        logo = json["logo"] as? String ?? ""
+//
+//
+//    }
+
+}
+class Statistics: Codable{
+    var total_time : String?
 
 }

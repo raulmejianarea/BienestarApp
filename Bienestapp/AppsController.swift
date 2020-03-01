@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+
+
 class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     
@@ -16,17 +18,21 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     var Apps = [App]()
-    var Satistics_Apps = [Satistics]()
+    var Statistics_Apps = [Statistics]()
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-//        GetApps {
-//             self.tableView.reloadData()
+     
+//        GetStatistics {
+//              self.tableView.reloadData()
+//
+//
 //        }
+        GetApps {
+            self.tableView.reloadData()
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,8 +46,9 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         
-        cell.AppName.text = apps[indexPath.row].name
-        cell.UseTime.text = Satistics_Apps[indexPath.row].total_time
+//        cell.AppName.text = apps[indexPath.row].name
+        cell.AppName.text = Apps[indexPath.row].name
+        cell.UseTime.text = Statistics_Apps[indexPath.row].total_time
         
         return cell
     }
@@ -58,14 +65,14 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
           
           Alamofire.request(url!, method: .get, headers: headers).responseJSON { (response) in
               print(response)
-              
+              print("1")
               do {
                 self.Apps = try JSONDecoder().decode([App].self, from: response.data!)
                   DispatchQueue.main.async{
-                    self.GetSatistics {
-                        
-                    }
-                      completed()
+                    self.GetStatistics {
+                         completed()
+                       }
+                    
                   }
                   
               }catch {
@@ -75,7 +82,7 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }.resume()
       }
     
-    func GetSatistics(completion: @escaping () -> ()) {
+    func GetStatistics(completed: @escaping () -> ()) {
         
         let url = URL(string: localhost + "/get_apps_statistics")
         let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
@@ -84,23 +91,21 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         Alamofire.request(url!, method: .get, headers: headers).responseJSON {
             
-            response in
+            (response) in
+            
+            print(response)
+         
             do {
-                if response.response?.statusCode == 200 {
-                    self.Satistics_Apps = try JSONDecoder().decode([Satistics].self, from: response.data!)
+                
+                    self.Statistics_Apps = try JSONDecoder().decode([Statistics].self, from: response.data!)
                     DispatchQueue.main.async{
-                        completion()
+                        completed()
                     }
-                }else if response.response?.statusCode == 401 {
-                    completion()
-                    print("error")
-                }
- 
             }catch{
                 
             }
 
-        }
+        }.resume()
     }
     
    

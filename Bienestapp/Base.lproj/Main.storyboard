@@ -553,7 +553,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-eM-Ldz">
-                                <rect key="frame" x="36" y="136" width="213" height="30"/>
+                                <rect key="frame" x="36" y="136" width="307" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SE0-eM-Ldz" secondAttribute="height" multiplier="71:10" id="Gtw-17-tfp"/>
                                     <constraint firstAttribute="width" constant="213" id="jW9-zd-VZP"/>
@@ -564,7 +564,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Om-A7-nlj">
-                                <rect key="frame" x="36" y="185" width="247" height="30"/>
+                                <rect key="frame" x="36" y="185" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="D72-Mh-d1y"/>
                                     <constraint firstAttribute="width" secondItem="2Om-A7-nlj" secondAttribute="height" multiplier="247:30" id="LBy-Su-0bd"/>
@@ -574,7 +574,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iq6-Zr-SJX">
-                                <rect key="frame" x="0.0" y="56" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="T7H-HC-UwO"/>
                                     <constraint firstAttribute="width" secondItem="iq6-Zr-SJX" secondAttribute="height" multiplier="80:11" id="bOJ-5C-4BL"/>
@@ -591,7 +591,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-jg-Gmx">
-                                <rect key="frame" x="36" y="234" width="119" height="21"/>
+                                <rect key="frame" x="36" y="234" width="213" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yb1-jg-Gmx" secondAttribute="height" multiplier="17:3" id="Iew-Bn-3Fl"/>
                                     <constraint firstAttribute="height" constant="21" id="ZB5-gC-C4N"/>
@@ -602,7 +602,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bs7-Tm-4Tk">
-                                <rect key="frame" x="36" y="274" width="247" height="30"/>
+                                <rect key="frame" x="36" y="274" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6fA-wh-15E"/>
                                     <constraint firstAttribute="width" constant="247" id="aSc-CM-qld"/>
@@ -612,7 +612,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Su-Ev-Xce">
-                                <rect key="frame" x="36" y="328" width="146" height="30"/>
+                                <rect key="frame" x="36" y="328" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6h9-08-Utd"/>
                                     <constraint firstAttribute="width" constant="146" id="pmI-Z4-INL"/>
@@ -623,7 +623,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-lQ-V8C">
-                                <rect key="frame" x="36" y="374" width="247" height="30"/>
+                                <rect key="frame" x="36" y="374" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uW3-lQ-V8C" secondAttribute="height" multiplier="247:30" id="8sE-HB-6QR"/>
                                     <constraint firstAttribute="width" constant="247" id="OhM-v1-cax"/>
@@ -633,7 +633,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laa-Ch-ciS">
-                                <rect key="frame" x="52" y="456" width="217" height="54"/>
+                                <rect key="frame" x="52" y="456" width="311" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="l5s-cf-7GV"/>
                                     <constraint firstAttribute="width" secondItem="Laa-Ch-ciS" secondAttribute="height" multiplier="217:54" id="lsn-eq-6ET"/>

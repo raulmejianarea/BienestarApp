@@ -23,30 +23,30 @@ class loginController: UIViewController {
     
     @IBAction func logginButton(_ sender: UIButton) {
         
-         self.performSegue(withIdentifier: "menu", sender: sender)
+//         self.performSegue(withIdentifier: "menu", sender: sender)
         
-//        guard let loginemail = email.text, email.text?.count != 0 else {
-//                      createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
-//                      return
-//                  }
-//                  if HelperController.isValidEmail(emailID: loginemail) == false {
-//                      createAlert(title: "Fallo", message: "Pon un email correcto")
-//                  }
-//
-//              guard let loginpassword = password.text, password.text?.count != 0 else {
-//                      createAlert(title: "Fallo", message: "Pon tu contraseña para continuar")
-//                      return
-//                  }
-//
-//                loginUser(email: loginemail, password: loginpassword, sender: sender, completion: {result in
-//
-//        if result == true{
-//            self.performSegue(withIdentifier: "menu", sender: sender)
-//        }else if result == false{
-//            self.createAlert(title: "error", message: "email o contraseña incorrectos")
-//        }
-//
-//    })
+        guard let loginemail = email.text, email.text?.count != 0 else {
+                      createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
+                      return
+                  }
+                  if HelperController.isValidEmail(emailID: loginemail) == false {
+                      createAlert(title: "Fallo", message: "Pon un email correcto")
+                  }
+
+              guard let loginpassword = password.text, password.text?.count != 0 else {
+                      createAlert(title: "Fallo", message: "Pon tu contraseña para continuar")
+                      return
+                  }
+
+                loginUser(email: loginemail, password: loginpassword, sender: sender, completion: {result in
+
+        if result == true{
+            self.performSegue(withIdentifier: "menu", sender: sender)
+        }else if result == false{
+            self.createAlert(title: "error", message: "email o contraseña incorrectos")
+        }
+
+    })
         
         
     }
