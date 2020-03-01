@@ -9,6 +9,7 @@ pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'MSCircularSlider'
 pod 'OHHTTPStubs/Swift'
+pod 'SDWebImage'
   # Pods for Bienestapp
 
 end

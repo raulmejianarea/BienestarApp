@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-Bienestapp/Pods-Bienestapp-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/MSCircularSlider/MSCircularSlider.framework
 ${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

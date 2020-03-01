@@ -21,6 +21,9 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.0.0)
   - OHHTTPStubs/Swift (9.0.0):
     - OHHTTPStubs/Default
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -28,6 +31,7 @@ DEPENDENCIES:
   - GooglePlaces
   - MSCircularSlider
   - OHHTTPStubs/Swift
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -36,6 +40,7 @@ SPEC REPOS:
     - GooglePlaces
     - MSCircularSlider
     - OHHTTPStubs
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -43,7 +48,8 @@ SPEC CHECKSUMS:
   GooglePlaces: a62077320f9d64239245af63aa1aa136393ebeb6
   MSCircularSlider: fb0aa028f3b2f5d9eff6179b80edb25af1f5118a
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
 
-PODFILE CHECKSUM: 22a0bd58a77032288972bbbbeda5909aad525a24
+PODFILE CHECKSUM: 6f8fe0a7559780c11e4201aa7d4467cd4077e919
 
 COCOAPODS: 1.8.4
