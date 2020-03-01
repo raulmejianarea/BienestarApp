@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SDWebImage
 
 
 class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
@@ -46,15 +46,22 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         
-//        cell.AppName.text = apps[indexPath.row].name
         cell.AppName.text = Apps[indexPath.row].name
         cell.UseTime.text = Statistics_Apps[indexPath.row].total_time
+        
+        let baseURL = URL(string: "http://localhost/apibienestar/storage/app/")!
+        let placeholderImage = UIImage(named: "logo App.png")
+        let remoteImageURL = baseURL.appendingPathComponent(Apps[indexPath.row].logo!)
+        
+        print(remoteImageURL)
+        cell.AppLogo?.sd_setImage(with: remoteImageURL, placeholderImage: placeholderImage)
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
+        return 90
     }
     
     func GetApps (completed: @escaping () -> ()) {
