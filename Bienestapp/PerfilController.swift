@@ -58,7 +58,7 @@ class PerfilController: UIViewController, UNUserNotificationCenterDelegate {
     }
 
     func getUserData() {
-        let url = URL( string: "http://localhost:8888/api-bienestar/public/api/get_user_data")!
+        let url = URL( string: localhost + "get_user_data")!
         
         let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
         

@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+let localhost : String = "http://localhost/apibienestar/public/api"
+
 class loginController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
@@ -64,7 +66,7 @@ class loginController: UIViewController {
 
     //metodo que realiza la peticion login a la Api
     func loginUser(email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
-        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/login")
+        let url = URL(string: localhost + "/login")
         let json = ["email": email,
                     "password": password]
         

@@ -5,6 +5,7 @@
 //  Created by user161817 on 15/02/2020.
 //  Copyright © 2020 alumnos. All rights reserved.
 //
+import Foundation
 
 class App: Codable{
     

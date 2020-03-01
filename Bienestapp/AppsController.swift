@@ -16,7 +16,7 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     var Apps = [App]()
-    
+    var Satistics_Apps = [Satistics]()
    
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         
         cell.AppName.text = apps[indexPath.row].name
-        
+        cell.UseTime.text = Satistics_Apps[indexPath.row].total_time
         
         return cell
     }
@@ -51,7 +51,7 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func GetApps (completed: @escaping () -> ()) {
-        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/listarApps")
+        let url = URL(string: localhost + "/listarApps")
           
         let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
         let headers = ["Authorization" : user_token]
@@ -62,6 +62,9 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
               do {
                 self.Apps = try JSONDecoder().decode([App].self, from: response.data!)
                   DispatchQueue.main.async{
+                    self.GetSatistics {
+                        
+                    }
                       completed()
                   }
                   
@@ -72,28 +75,33 @@ class AppsController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }.resume()
       }
     
-//    func get_apps_data(){
-//        let url = URL(string: local_host + "/api/app")!
-//        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
-//        let headers = ["Authorization" : user_token]
-//        Alamofire.request(url, encoding: JSONEncoding.default, headers: headers).responseJSON {
-//            response in
-//            switch(response.response?.statusCode){
-//            case 200:
-//                print("OK")
-//                if let json = response.result.value as? [[String: Any]] {
-//                    for app in json {
-//                        apps.append(App(json: app))
-//                    }
-//                    self.performSegue(withIdentifier: "login_to_menu", sender: nil)
-//                }
-//            case 400:
-//                print("ERROR")
-//            default:
-//                print("DEFAULT")
-//            }
-//        }
-//    }
+    func GetSatistics(completion: @escaping () -> ()) {
+        
+        let url = URL(string: localhost + "/get_apps_statistics")
+        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+        
+        let headers = ["Authorization" : user_token]
+    
+        Alamofire.request(url!, method: .get, headers: headers).responseJSON {
+            
+            response in
+            do {
+                if response.response?.statusCode == 200 {
+                    self.Satistics_Apps = try JSONDecoder().decode([Satistics].self, from: response.data!)
+                    DispatchQueue.main.async{
+                        completion()
+                    }
+                }else if response.response?.statusCode == 401 {
+                    completion()
+                    print("error")
+                }
+ 
+            }catch{
+                
+            }
+
+        }
+    }
     
    
 }

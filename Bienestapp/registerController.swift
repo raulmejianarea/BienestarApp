@@ -64,7 +64,7 @@ class registerController: UIViewController {
     }
  
     func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
-    let url = URL(string: "http://localhost:8888/api-bienestar/public/api/register")!
+    let url = URL(string: localhost + "/register")!
     let json = ["name": name,
                 "email": email,
                 "password": password

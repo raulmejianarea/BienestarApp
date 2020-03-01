@@ -66,7 +66,7 @@ class ChangePasswordController: UIViewController {
     //peticion a la Api
     func change_password(old_password: String, new_password: String, sender: Any, completion: @escaping (Bool) -> ()) {
         
-        let url = URL(string: "http://localhost:8888/api-bienestar/public/api/change_user_password")!
+        let url = URL(string: localhost + "/change_user_password")!
         
         let json = ["old_password": old_password , "new_password": new_password]
         

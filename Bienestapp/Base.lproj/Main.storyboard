@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSp-28-Ker">
-                                <rect key="frame" x="45" y="347" width="285" height="30"/>
+                                <rect key="frame" x="45" y="367" width="324" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-Gt-Ln3">
-                                <rect key="frame" x="45" y="310" width="41" height="21"/>
+                                <rect key="frame" x="45" y="310" width="80" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UN4-Gt-Ln3" secondAttribute="height" multiplier="41:21" id="hEF-Ym-0CA"/>
                                 </constraints>
@@ -33,12 +33,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEg-te-H4G">
-                                <rect key="frame" x="45" y="439" width="285" height="30"/>
+                                <rect key="frame" x="45" y="472" width="324" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXl-iX-cbg">
-                                <rect key="frame" x="45" y="402" width="86" height="29"/>
+                                <rect key="frame" x="45" y="422" width="125" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bXl-iX-cbg" secondAttribute="height" multiplier="86:29" id="oCW-2R-qyd"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9v-B8-Uxm">
-                                <rect key="frame" x="129" y="520" width="117" height="30"/>
+                                <rect key="frame" x="129" y="553" width="156" height="30"/>
                                 <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KLx-SZ-eqO"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-Qx-Ux6">
-                                <rect key="frame" x="159" y="585" width="57" height="30"/>
+                                <rect key="frame" x="159" y="618" width="96" height="50.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kaI-Qx-Ux6" secondAttribute="height" multiplier="19:10" id="dZC-fK-AfJ"/>
                                 </constraints>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo App.png" translatesAutoresizingMaskIntoConstraints="NO" id="vh2-LR-3M2">
-                                <rect key="frame" x="87" y="95" width="201" height="143"/>
+                                <rect key="frame" x="87" y="95" width="240" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="Gc6-dc-qa5"/>
                                     <constraint firstAttribute="height" constant="143" id="aHU-mG-siZ"/>
@@ -79,7 +79,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJo-h9-Bdd">
-                                <rect key="frame" x="108" y="623" width="159" height="30"/>
+                                <rect key="frame" x="108" y="676.5" width="198" height="37.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kJo-h9-Bdd" secondAttribute="height" multiplier="53:10" id="k3r-FS-j1B"/>
                                 </constraints>
@@ -144,38 +144,36 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JaO-0m-4sw" kind="showDetail" id="djc-WD-ypC"/>
+                                    <segue destination="JaO-0m-4sw" kind="showDetail" identifier="apps" id="djc-WD-ypC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-NO-wrs">
-                                <rect key="frame" x="37" y="290" width="130" height="120"/>
+                                <rect key="frame" x="37" y="322" width="130" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" image="statics.png">
-                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" image="statics.png"/>
                                 <connections>
-                                    <segue destination="OpN-iu-3wt" kind="showDetail" id="Lg7-6D-fe5"/>
+                                    <segue destination="OpN-iu-3wt" kind="showDetail" identifier="estadisticas" id="Lg7-6D-fe5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdz-Jp-Ca5">
-                                <rect key="frame" x="238" y="290" width="130" height="120"/>
+                                <rect key="frame" x="244" y="322" width="130" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restringir tiempo" image="restringir.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jHQ-dV-gdh" kind="showDetail" id="deH-vX-xAf"/>
+                                    <segue destination="jHQ-dV-gdh" kind="showDetail" identifier="limitador" id="deH-vX-xAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoY-Rc-b9i">
-                                <rect key="frame" x="142" y="473" width="130" height="120"/>
+                                <rect key="frame" x="142" y="543" width="130" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Perfil" image="perfil.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KoE-5v-cqd" kind="showDetail" id="ei0-rb-Bmh"/>
+                                    <segue destination="KoE-5v-cqd" kind="showDetail" identifier="perfil" id="ei0-rb-Bmh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axj-ig-8Nx">
@@ -185,16 +183,71 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KH9-hw-RKd" kind="showDetail" id="UUN-8N-uVH"/>
+                                    <segue destination="KH9-hw-RKd" kind="showDetail" identifier="mapa" id="UUN-8N-uVH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ab-m4-Dxm">
-                                <rect key="frame" x="87" y="750" width="240" height="30"/>
+                                <rect key="frame" x="87" y="804" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cerrar Sesion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOy-jf-lDh">
+                                <rect key="frame" x="278" y="251" width="63" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="Apps">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="appsLabel:" destination="KdU-dI-Jg2" eventType="touchUpInside" id="xF6-Ar-fpk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-B0-ntd">
+                                <rect key="frame" x="71" y="251" width="63" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="Mapa">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="mapaLabel:" destination="KdU-dI-Jg2" eventType="touchUpInside" id="7td-k6-TDe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJZ-Qn-K4a">
+                                <rect key="frame" x="8" y="473" width="188" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="Estadisticas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="estadisticasLabel:" destination="KdU-dI-Jg2" eventType="touchUpInside" id="ACp-Ge-Thd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-X6-EZX">
+                                <rect key="frame" x="161" y="671" width="94" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="Perfil">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="perfilLabel:" destination="KdU-dI-Jg2" eventType="touchUpInside" id="ceJ-t7-JBi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39m-vf-7bt">
+                                <rect key="frame" x="239" y="473" width="141" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <state key="normal" title="Limitador">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="limitadorLabel:" destination="KdU-dI-Jg2" eventType="touchUpInside" id="yak-7S-ewe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -962,17 +1015,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apps.png" width="512" height="512"/>
+        <image name="apps.png" width="384" height="384"/>
         <image name="logo App.png" width="25" height="25"/>
         <image name="mapa.png" width="512" height="512"/>
         <image name="perfil.png" width="384" height="384"/>
-        <image name="restringir.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="restringir.png" width="384" height="384"/>
         <image name="statics.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ei0-rb-Bmh"/>
         <segue reference="djc-WD-ypC"/>
-        <segue reference="RZS-M7-HLX"/>
+        <segue reference="EP1-GD-wwf"/>
         <segue reference="dk0-vP-nFd"/>
     </inferredMetricsTieBreakers>
 </document>
