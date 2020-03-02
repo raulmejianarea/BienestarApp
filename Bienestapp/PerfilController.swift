@@ -24,7 +24,7 @@ class PerfilController: UIViewController, UNUserNotificationCenterDelegate {
         
         UNUserNotificationCenter.current().delegate = self
 
-//        getUserData()
+        getUserData()
     }
     @IBAction func Notifications(_ sender: UISwitch) {
         if (sender.isOn == true){
@@ -58,7 +58,7 @@ class PerfilController: UIViewController, UNUserNotificationCenterDelegate {
     }
 
     func getUserData() {
-        let url = URL( string: localhost + "get_user_data")!
+        let url = URL( string: localhost + "/get_user_data")!
         
         let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
         

@@ -4,7 +4,6 @@ import UIKit
 import Alamofire
 import OHHTTPStubs
 
-var apps: [App] = []
 
 class registerController: UIViewController {
     
@@ -40,12 +39,12 @@ class registerController: UIViewController {
             return
         }
         
-        registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender, completion: {result in
+        Network.registerUser(name: registerName, email: registerEmail, password: registerPassword, sender: sender, completion: {result in
             
             if result == true{
                 self.performSegue(withIdentifier: "login", sender: sender)
             }else{
-                
+                self.createAlert(title: "error", message: "no se ha podido realizar el register.")
             }
                 
             })
@@ -63,44 +62,7 @@ class registerController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
  
-    func registerUser(name: String, email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
-    let url = URL(string: localhost + "/register")!
-    let json = ["name": name,
-                "email": email,
-                "password": password
-                ]
-    
-    Alamofire.request(url, method: .post, parameters: json, headers: nil).responseJSON { (response) in
-        
-        print(response)
-        
-    
-                   do {
-                    if response.response?.statusCode == 200 {
-                        
-                        if let json = response.result.value as? [String: Any]{
-                            
-                            let token = json["token"] as! String
-                            UserDefaults.standard.set(token, forKey: "token")
-                            completion(true)
-                            
-                        }
-                    }else if response.response?.statusCode == 401 {
-                        
-                        if let json = response.result.value as? [String: Any] {
-                            
-                            let message = json["message"] as! String
-                            completion(false)
-                            print(message)
-                        }
-                    }
-
-                   }catch {
-                       print(error)
-                   }
-        
-            }
-    }
+   
     
     func store_apps_data(text: String){
         

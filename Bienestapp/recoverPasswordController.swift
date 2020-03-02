@@ -28,7 +28,18 @@ class recoverPasswordController: UIViewController {
             createAlert(title: "Error en el email", message: "El formato del email no es valido")
         }
         
-        recoverPassword(email: recoverEmail, confirm_email: confirmationRecoverEmail)
+        Network.recoverPassword(email: recoverEmail, confirm_email: confirmationRecoverEmail,sender: sender, completion: {result in
+            
+            if result == true{
+                self.createAlert(title: "succesful", message: "La contraseña ha sido enviada a tu correo.")
+            }else if result == false{
+                self.createAlert(title: "error", message: "No se ha podido restablecer tu contraseña.")
+            }
+            
+        })
+        
+        
+
         
  
     }
@@ -41,37 +52,6 @@ class recoverPasswordController: UIViewController {
     }
     
     
-    func recoverPassword(email: String, confirm_email: String) {
-        let url = URL(string: localhost + "/recover_password")
-        let json = ["email": email, "confirm_email": confirm_email]
-        
-        Alamofire.request(url!, method: .post, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-            print(response)
-            
-            do {
-              
-                
-                if response.response?.statusCode == 200 {
-                    
-                    if let json = response.result.value as? [String: Any]{
-                         let message = json["message"] as! String
-                        self.createAlert(title: "Informacion", message: message + " Haz loggin ")
-                        
-                    }
-                }else if response.response?.statusCode == 401 {
-                    
-                    if let json = response.result.value as? [String: Any] {
-                        let message = json["message"] as! String
-                         self.createAlert(title: "Error", message: message)
-                        print(message)
-                    }
-                }
-                
-            }catch {
-                print(error)
-            }
-            
-        }
-    }
+   
 }
 

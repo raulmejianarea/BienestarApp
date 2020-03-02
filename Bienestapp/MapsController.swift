@@ -10,17 +10,22 @@ import UIKit
 import Alamofire
 import GoogleMaps
 import GooglePlaces
+import SDWebImage
 
 class MapsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var tableView: UITableView!
     
-     var students = ["Ben", "Ivy", "Jordell" ,"Ben", "Ivy", "Jordell" ,"Ben", "Ivy", "Jordell" ,"Ben", "Ivy", "Jordell"]
-    var fotos = [#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg") ,#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg") ,#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg") ,#imageLiteral(resourceName: "mujer.jpg"),#imageLiteral(resourceName: "mujer.jpg"), #imageLiteral(resourceName: "mujer.jpg")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Network.GetApps {
+            
+            self.tableView.reloadData()
+        }
         
         // Do any additional setup after loading the view.
         tableView.delegate = self
@@ -35,15 +40,22 @@ class MapsController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return Network.Apps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         
-        cell.NameApp?.text = students[indexPath.row]
-        cell.LogoApp?.image = fotos[indexPath.row]
+        cell.NameApp?.text = Network.Apps[indexPath.row].name
+        
+        //Mostrar imagenes mediante la url con sdWebImage
+        let baseURL = URL(string: "http://localhost/apibienestar/storage/app/")!
+        let placeholderImage = UIImage(named: "logo App.png")
+        let remoteImageURL = baseURL.appendingPathComponent(Network.Apps[indexPath.row].logo!)
+        print(remoteImageURL)
+        cell.LogoApp?.sd_setImage(with: remoteImageURL, placeholderImage: placeholderImage)
+
         
         return cell
     }

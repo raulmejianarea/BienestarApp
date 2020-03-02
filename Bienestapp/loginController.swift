@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-let localhost : String = "http://localhost/apibienestar/public/api"
+
 
 class loginController: UIViewController {
 
@@ -19,11 +19,14 @@ class loginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        email.text = "raulmejia@cev.com"
+        password.text = "123456"
     }
     
     @IBAction func logginButton(_ sender: UIButton) {
         
 //         self.performSegue(withIdentifier: "menu", sender: sender)
+      
         
         guard let loginemail = email.text, email.text?.count != 0 else {
                       createAlert(title: "Fallo", message: "Pon tu Usuario para continuar")
@@ -37,8 +40,9 @@ class loginController: UIViewController {
                       createAlert(title: "Fallo", message: "Pon tu contraseña para continuar")
                       return
                   }
-
-                loginUser(email: loginemail, password: loginpassword, sender: sender, completion: {result in
+        
+        
+               Network.loginUser(email: loginemail, password: loginpassword, sender: sender, completion: {result in
 
         if result == true{
             self.performSegue(withIdentifier: "menu", sender: sender)
@@ -64,42 +68,6 @@ class loginController: UIViewController {
      
       
 
-    //metodo que realiza la peticion login a la Api
-    func loginUser(email: String, password: String, sender: Any, completion: @escaping (Bool) -> ()) {
-        let url = URL(string: localhost + "/login")
-        let json = ["email": email,
-                    "password": password]
-        
-        Alamofire.request(url!, method: .post, parameters: json, headers: nil).responseJSON { (response) in
-            print(response)
-
-            
-            do {
-                if response.response?.statusCode == 200 {
-                    completion(true)
-                    if let json = response.result.value as? [String: Any]{
-                        
-                        let token = json["token"] as! String
-                        UserDefaults.standard.set(token, forKey: "token")
-                        
-                        
-                    }
-                }else if response.response?.statusCode == 401 {
-                    completion(false)
-                    if let json = response.result.value as? [String: Any] {
-                        
-                        self.createAlert(title: "Error", message: "Email o contraseña incorrectos")
-                        let message = json["message"] as! String
-                        
-                        print(message)
-                    }
-                }
-                
-            }catch {
-                print(error)
-            }
-           
-    }
-}
+   
 
 }
