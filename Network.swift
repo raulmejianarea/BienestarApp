@@ -170,4 +170,29 @@ class Network{
             
             }.resume()
     }
+    
+     static var apps_coordinates: [Coordinates] = []
+    //peticion Get Coordinates
+    class func coordinates(completed: @escaping () -> ()){
+        
+        let url = URL(string: localhost + "/get_apps_coordinates")
+        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+        let headers = ["Authorization" : user_token]
+        
+        Alamofire.request(url!, method: .get, headers: headers).responseJSON {
+            response in
+            print(response)
+            
+            do {
+                self.apps_coordinates = try JSONDecoder().decode([Coordinates].self, from: response.data!)
+                DispatchQueue.main.async{
+                    completed()
+                }
+                
+            }catch {
+                print(error)
+                
+            }
+            }.resume()
+    }
 }

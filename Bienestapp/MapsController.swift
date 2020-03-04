@@ -10,18 +10,18 @@ import UIKit
 import Alamofire
 import GoogleMaps
 import GooglePlaces
+import MapKit
 import SDWebImage
 
 class MapsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var mapkit: MKMapView!
     @IBOutlet weak var tableView: UITableView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         Network.GetApps {
             
             self.tableView.reloadData()
@@ -30,15 +30,32 @@ class MapsController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-
-        // Creates a marker in the center of the map.
-          let marker = GMSMarker()
-          marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-          marker.title = "Sydney"
-          marker.snippet = "Australia"
-          marker.map = mapView
+        
+        Site()
+        Network.coordinates {
+            for app in Network.apps_coordinates {
+                self.Markers(latitude: app.latitude, Longitud: app.longitude, title: app.name, subtitle: "ultimo lugar de uso")
+            }
+        }
+        
        
     }
+    //funcion que centra el mapa en un sitio especifico
+    func Site (){
+        let madrid = CLLocationCoordinate2D(latitude: 40.4893538, longitude: -3.703790)
+        let region = MKCoordinateRegion(center: madrid, latitudinalMeters: 80000, longitudinalMeters: 80000)
+        mapkit.setRegion(region, animated: true)
+    }
+    //funcion que genera marcas en el mapa
+    func Markers (latitude: CLLocationDegrees, Longitud: CLLocationDegrees, title: String, subtitle: String) {
+        let annontation = MKPointAnnotation()
+        annontation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: Longitud)
+        annontation.title = title
+        annontation.subtitle = subtitle
+        mapkit.addAnnotation(annontation)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Network.Apps.count
     }
@@ -63,5 +80,5 @@ class MapsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 88
     }
-   
+ 
 }

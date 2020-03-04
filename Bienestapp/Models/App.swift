@@ -25,7 +25,14 @@ class App: Codable{
 //    }
 
 }
-class Statistics: Codable{
+class Statistics : Codable{
     var total_time : String?
+}
+
+class Coordinates : Codable {
+    
+    var name: String
+    var latitude: Double
+    var longitude: Double
 
 }
