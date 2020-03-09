@@ -26,7 +26,11 @@ class App: Codable{
 
 }
 class Statistics : Codable{
+    var name : String?
     var total_time : String?
+    var day_average : String?
+    var week_average : String?
+    var month_average : String?
 }
 
 class Coordinates : Codable {

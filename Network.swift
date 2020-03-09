@@ -195,4 +195,27 @@ class Network{
             }
             }.resume()
     }
+    
+//    class func restrict (id : String, completion: @escaping (Bool) -> ())  {
+//        let url = URL(string: localhost + "/api/create_restriction/" + id)
+//        
+//        let json = ["maximum_usage_time": time_maximum , "usage_from_hour": initial_time, "usage_to_hour": finish_time]
+//        let user_token: String = UserDefaults.standard.value(forKey: "token") as! String
+//        let headers = ["Authorization" : user_token]
+//        
+//        Alamofire.request(url!, method: .post, parameters: json, encoding: JSONEncoding.default, headers: headers).responseJSON {
+//            response in
+//            
+//            switch(response.response?.statusCode){
+//            case 200:
+//               
+//             completion(true)
+//            case 401:
+//                completion(false)
+//            default:
+//                print("RESTRICTION_DEFAULT")
+//            }
+//            
+//        }
+//    }
 }

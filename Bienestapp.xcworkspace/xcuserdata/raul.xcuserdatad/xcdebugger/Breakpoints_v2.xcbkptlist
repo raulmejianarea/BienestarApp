@@ -10,13 +10,202 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bienestapp/AppsController.swift"
-            timestampString = "604974417.859184"
+            timestampString = "605453298.034593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bienestapp/RestricTimeController.swift"
+            timestampString = "605391936.003659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bienestapp/RestricTimeController.swift"
+            timestampString = "605391936.004191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.RestricTimeController.buttonSave(Any) -&gt; ()"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/RestricTimeController.swift"
+                  timestampString = "605453298.4537849"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "4246">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Bienestapp.RestricTimeController.buttonSave(Any) -&gt; ()"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/RestricTimeController.swift"
+                  timestampString = "605453298.46491"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bienestapp/RestricTimeController.swift"
+            timestampString = "605391936.004655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bienestapp/RestricTimeController.swift"
+            timestampString = "605391936.005031"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bienestapp/StatisticsController.swift"
+            timestampString = "605453298.034783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.StatisticsController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Bienestapp.StatisticsController"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/StatisticsController.swift"
+                  timestampString = "605450947.155696"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.StatisticsController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Bienestapp.StatisticsController"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/StatisticsController.swift"
+                  timestampString = "605450947.164201"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "199">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.StatisticsController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Bienestapp.StatisticsController&gt;"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/StatisticsController.swift"
+                  timestampString = "605450947.1718709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.StatisticsController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Bienestapp.StatisticsController&gt;"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/StatisticsController.swift"
+                  timestampString = "605450947.179548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bienestapp.StatisticsController.__deallocating_deinit"
+                  moduleName = "Bienestapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raul/Desktop/BienestarApp/Bienestapp/StatisticsController.swift"
+                  timestampString = "605450947.186837"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

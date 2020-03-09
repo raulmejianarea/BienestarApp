@@ -19,6 +19,11 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var LogoApp: UIImageView!
     @IBOutlet weak var NameApp: UILabel!
     
+    //Elementos de Estadisticas Screen
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var day_time: UILabel!
+    @IBOutlet weak var time_week: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
